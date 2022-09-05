@@ -14,7 +14,7 @@ inline float RandRange( float fMin, float fMax )
 
 inline glm::vec3 RandUnitVec()
 {
-    float x = ( Random() * 2.0f ) - 1.0f;
+    float x = (Random() * 2.0f) - 1.0f;
     float y = ( Random() * 2.0f ) - 1.0f;
     float z = ( Random() * 2.0f ) - 1.0f;
 

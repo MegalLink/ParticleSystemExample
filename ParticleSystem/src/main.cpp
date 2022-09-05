@@ -53,7 +53,7 @@ int main( int argc, char* argv[] )
     g_Camera.SetRotate( g_DefaultCameraRotate );
     g_Camera.SetPivot( g_DefaultCameraPivot );
 
-    if ( g_ParticleEffect.LoadTexture( "Data/Textures/Particle-Texture.png" ) )
+    if ( g_ParticleEffect.LoadTexture( "Data/Textures/fire.png" ) )
     {
         std::cout << "Successfully loaded particle texture." << std::endl;
     }
@@ -62,14 +62,11 @@ int main( int argc, char* argv[] )
         std::cerr << "Failed to load particle texture!" << std::endl;
     }
     ParticleEffect::ColorInterpolator colors;
-
-    colors.AddValue(0.0f,  glm::vec4(1, 0, 0, 1) );     // red
-    colors.AddValue(0.15f, glm::vec4(1, 0, 1, 1) );     // magenta
-    colors.AddValue(0.33f, glm::vec4(0, 0, 1, 1) );     // blue
-    colors.AddValue(0.5f,  glm::vec4(0, 1, 1, 1) );     // cyan
-    colors.AddValue(0.67f, glm::vec4(0, 1, 0, 0.75) );  // green
-    colors.AddValue(0.84f, glm::vec4(1, 1, 0, 0.5) );   // yellow
+    // Fire colors
+    colors.AddValue(0.0f,  glm::vec4(1, 1, 0, 0.5));     // yellow
+    colors.AddValue(0.84f, glm::vec4(1, 0.5, 0, 0) );   // orange
     colors.AddValue(1.0f,  glm::vec4(1, 0, 0, 0) );     // red
+    // Water color
 
     g_ParticleEffect.SetColorInterplator( colors );
 
@@ -158,7 +155,7 @@ void DrawAxis( float fScale, glm::vec3 translate = glm::vec3(0) )
 
 void DisplayGL()
 {
-    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );                   // Clear the color buffer, and the depth buffer.
+    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );              
 
     glMatrixMode( GL_MODELVIEW );
     glLoadIdentity();

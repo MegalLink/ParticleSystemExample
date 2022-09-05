@@ -3,12 +3,12 @@
 #include "SphereEmitter.h"
 
 SphereEmitter::SphereEmitter()
-: MinimumRadius(0)
+: MinimumRadius(0) //Z APERTURE
 , MaximumRadius(1)
-, MinInclination(0)
-, MaxInclination(180)
-, MinAzimuth(0)
-, MaxAzimuth(360)
+, MinInclination(55)  // PARTICLE SPARK DIRECTION
+, MaxInclination(130)
+, MinAzimuth(45) // X APERTURE
+, MaxAzimuth(135)
 , MinSpeed(10)
 , MaxSpeed(20)
 , MinLifetime(3)
