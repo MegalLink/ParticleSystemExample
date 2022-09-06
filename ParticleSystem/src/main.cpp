@@ -8,12 +8,7 @@
 PivotCamera g_Camera;
 SphereEmitter g_ParticleEmitter;
 CubeEmitter g_CubeEmitter;
-
-#if _DEBUG
-ParticleEffect g_ParticleEffect(1000);
-#else
-ParticleEffect g_ParticleEffect(100000);
-#endif 
+ParticleEffect g_ParticleEffect(10000);
 
 int g_iWindowWidth = 1280;
 int g_iWindowHeight = 720;
@@ -41,8 +36,6 @@ void KeyboardGL( unsigned char c, int x, int y );
 void MouseGL( int button, int state, int x, int y );
 void MotionGL( int x, int y );
 void ReshapeGL( int w, int h );
-
-// We're exiting, cleanup the allocated resources.
 void Cleanup();
 
 int main( int argc, char* argv[] )
